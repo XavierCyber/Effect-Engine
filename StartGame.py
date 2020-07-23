@@ -35,12 +35,10 @@ def startGame(text_box,main_img_label, image_frame, image_list, start_button, qu
     game_thread.start()
 
 def printHello(text_box, main_img_label, image_frame, image_list, queue, stats_box):
-    mixer.music.load('audio/174_Wizards_Tower.mp3')
     global input_accepted
     writeToScreen(text_box, "Welcome to.....\n", 'n')
     time.sleep(2)
     writeToScreen(text_box, "Game", 'n')
-    mixer.music.play()
     while True:
         writeToScreen(text_box, "\n         MAIN MENU\n", 'n')
         writeToScreen(text_box, "1. New Game\n", 'n')
