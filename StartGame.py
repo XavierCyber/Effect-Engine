@@ -1,28 +1,44 @@
 import tkinter as tk
+import time
 import threading
 from queue import Queue
-input_accepted = Queue()
-input_accepted.put(threading.Event())
+input_accepted = threading.Event()
 player_input = 0
+
+def writeToScreen(text_box, writing_text, delete):
+    text_box.configure(state="normal")
+    if delete == 'y':
+        text_box.delete(1.0, tk.END)
+    text_box.insert(tk.INSERT, writing_text)
+    text_box.configure(state="disabled")
 
 def replace_image(main_img_label, image_frame, current_img):
     main_img_label.grid_forget()
     main_img_label = tk.Label(image_frame, image=current_img)
     main_img_label.grid(sticky="nsew")
 
-def startGame(text_box,main_img_label, image_frame, image_list, start_button, queue, input_accepted):
+def startGame(text_box,main_img_label, image_frame, image_list, start_button, queue):
     global player_input
+    global input_accepted
     start_button.configure(state="disabled")
     game_thread = threading.Thread(target = printHello, args=(text_box,
-                                                              main_img_label, image_frame, image_list, queue, input_accepted,))
+                                                              main_img_label, image_frame, image_list, queue, ))
     game_thread.start()
 
-def printHello(text_box, main_img_label, image_frame, image_list, queue, input_accepted):    
-    text_box.configure(state="normal")
-    text_box.insert(tk.INSERT, "Welcome to...\n")
-    text_box.configure(state="disabled")
-    input_accepted.get().wait()
-    input_accepted.get().clear() # reset event
-    text_box.configure(state="normal")
-    text_box.insert(tk.INSERT, "{}".format(queue.get()))
-    text_box.configure(state="disabled")
+def printHello(text_box, main_img_label, image_frame, image_list, queue):
+    global input_accepted
+    writeToScreen(text_box, "Welcome to.....\n", 'n')
+    time.sleep(2)
+    writeToScreen(text_box, "Game", 'n')
+    while True:
+        writeToScreen(text_box, "\n         MAIN MENU\n", 'n')
+        writeToScreen(text_box, "1. New Game\n", 'n')
+        writeToScreen(text_box, "2. Load Game\n", 'n')
+        writeToScreen(text_box, "3. Exit\n", 'n')
+        
+        input_accepted.wait()
+        input_accepted.clear() # reset event
+        number = str(queue.get())
+        writeToScreen(text_box, "You chose: ", 'y')
+        writeToScreen(text_box, number, 'n')
+        #queue.queue.clear() # clear queue

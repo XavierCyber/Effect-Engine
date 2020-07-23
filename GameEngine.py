@@ -53,37 +53,37 @@ main_img_label.grid(row=0, column=0, sticky="nsew",
 #======================DETECT CLICKS=======================#
 
 
-def detect_Click(button_pressed, queue, input_accepted):
+def detect_Click(button_pressed, queue):
+    global input_accepted
     queue.put(button_pressed)
-    print(queue.get())
-    input_accepted.get().set()
+    input_accepted.set()
 
 #================================BUTTONS=============================#
 
 button1 = tk.Button(root, text="1", padx=25,pady=1,
-                            command=lambda : detect_Click(1, queue, input_accepted))
+                            command=lambda : detect_Click(1, queue))
 button1.grid(row=4,column=0)
 
 button2 = tk.Button(root, text="2", padx=25,pady=1,
-                            command=lambda : detect_Click(2, queue, input_accepted))
+                            command=lambda : detect_Click(2, queue))
 button2.grid(row=4,column=1)
 
 button3 = tk.Button(root, text="3", padx=25,pady=1,
-                            command=lambda : detect_Click(3, queue, input_accepted))
+                            command=lambda : detect_Click(3, queue))
 button3.grid(row=4,column=2)
 
 button4 = tk.Button(root, text="4", padx=25,pady=1,
-                            command=lambda : detect_Click(4, queue, input_accepted))
+                            command=lambda : detect_Click(4, queue))
 button4.grid(row=4,column=3)
 
 button5 = tk.Button(root, text="5", padx=25,pady=1,
-                            command=lambda : detect_Click(5, queue, input_accepted))
+                            command=lambda : detect_Click(5, queue))
 button5.grid(row=4,column=4)
 
 
 start_button = tk.Button(root, text="Start Game", padx=3,pady=1,
                             command=lambda : startGame(text_box, main_img_label,
-                                                       image_frame, image_list, start_button, queue, input_accepted))
+                                                       image_frame, image_list, start_button, queue))
 start_button.grid(row=4,column=5)
 
 
