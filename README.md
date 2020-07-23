@@ -6,6 +6,7 @@ Fully operational
 # Dependencies
 - Threading ```https://github.com/python/cpython/blob/master/Lib/threading.py```
 - Pillow ```pip install pillow```
+- Pygame ```pip install pygame```
 
 # Features
 - Tkinter GUI
