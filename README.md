@@ -1,7 +1,7 @@
 # Effect-Engine
 Python game engine for text RPGs
 
-Partially operational - No audio implementation
+Fully operational
 
 # Dependencies
 - Threading ```https://github.com/python/cpython/blob/master/Lib/threading.py```
@@ -15,6 +15,7 @@ Partially operational - No audio implementation
 - Main Text Widget
 - Stats Side Bar
 - Main Image Display (changeable using premade algorithm)
+- Pygame mixer (audio)
 
 # Issues
 - Many
