@@ -1,8 +1,20 @@
 # Effect-Engine
 Python game engine for text RPGs
 
-Non operational - Tkinter threads crashes when setting the user_input event.
+Partially operational - No audio implementation
 
-IF you have a fix be sure to open an issue, you will be given credit
+# Dependencies
+- Threading ```https://github.com/python/cpython/blob/master/Lib/threading.py```
+- Pillow ```pip install pillow```
 
-Images taken from google, are just there as place holders and will be replaced, I will also take them down on request
+# Features
+- Tkinter GUI
+- Multi-Threaded (2 Threads)
+- Text Processing Algorithms
+- Image Processing Algorithms
+- Main Text Widget
+- Stats Side Bar
+- Main Image Display (changeable using premade algorithm)
+
+# Issues
+- Many
