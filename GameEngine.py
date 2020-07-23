@@ -15,7 +15,7 @@ root.title("Test")
 #==============IMAGE AND MESSAGE FRAMES=================================#
 
 
-image_frame = tk.Frame(root, padx=3, pady=3, width=600, height = 400)
+image_frame = tk.Frame(root, padx=3, width=600, height = 400)
 image_frame.grid(row=0, column=0, columnspan = 5)
 image_frame.grid_propagate(False)
 
@@ -45,7 +45,7 @@ image_list.append(ImageTk.PhotoImage(Image.open("images/image2.jpg")))
 
 #============================IMAGE WINDOW=============================#
 
-main_img_label = tk.Label(image_frame, image = image_list[0])
+main_img_label = tk.Label(image_frame, image = image_list[0], padx=3)
 main_img_label.grid(row=0, column=0, sticky="nsew",
                     columnspan = 6, rowspan = 3)
 
@@ -83,7 +83,7 @@ button5.grid(row=4,column=4)
 
 start_button = tk.Button(root, text="Start Game", padx=3,pady=1,
                             command=lambda : startGame(text_box, main_img_label,
-                                                       image_frame, image_list, start_button, queue))
+                                                       image_frame, image_list, start_button, queue, stats_box))
 start_button.grid(row=4,column=5)
 
 
