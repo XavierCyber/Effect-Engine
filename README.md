@@ -3,6 +3,9 @@ Python game engine for text RPGs
 
 Fully operational
 
+# What's new
+- Added the foundations for a sprite grid system
+
 # Dependencies
 - Threading ```https://github.com/python/cpython/blob/master/Lib/threading.py```
 - Pillow ```pip install pillow```
