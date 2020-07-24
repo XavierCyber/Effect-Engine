@@ -16,11 +16,11 @@ root.title("Effect Engine")
 
 
 image_frame = tk.Frame(root, padx=3, width=600, height = 400)
-image_frame.grid(row=0, column=0, columnspan = 5)
+image_frame.grid(row=0, column=0, columnspan = 5, rowspan = 3)
 image_frame.grid_propagate(False)
 
 text_box_frame = tk.Frame(root, padx = 1, pady=1, width = 600, height = 150)
-text_box_frame.grid(row=1,column=0, columnspan = 5)
+text_box_frame.grid(row=3,column=0, columnspan = 5)
 text_box_frame.grid_propagate(False)
 text_box = tk.Text(text_box_frame)
 text_box.configure(state="disabled")
