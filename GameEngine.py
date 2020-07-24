@@ -9,7 +9,7 @@ queue = Queue()
 
 
 root = tk.Tk()
-root.title("Test")
+root.title("Effect Engine")
 
 
 #==============IMAGE AND MESSAGE FRAMES=================================#
@@ -40,7 +40,6 @@ stats_box.grid(sticky="nsew", rowspan = 1)
 image_list = []
 
 image_list.append(ImageTk.PhotoImage(Image.open("images/title.png")))
-image_list.append(ImageTk.PhotoImage(Image.open("images/image2.jpg")))
 
 
 #============================IMAGE WINDOW=============================#
