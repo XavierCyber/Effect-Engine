@@ -21,6 +21,7 @@ Fully operational
 - Stats Side Bar
 - Main Image Display (changeable using premade algorithm)
 - Pygame mixer (audio)
+- Sprite System to display sprites (pixel coordinates)
 
 # Issues
 - Many
